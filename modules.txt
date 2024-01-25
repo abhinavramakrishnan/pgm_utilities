@@ -1,0 +1,84 @@
+                                                Main modules
+------------------------------------------------------------------------------------------------------------
+pgmEcho
+- This module will echo the input file to the output file. It will the echoFile to do it.
+
+pgmComp
+- This module will read two files (binary or ASCII) using either readASCII or readBinary and store them in two 
+separte pgm file structs. Then it will use the logicallyEquivalent module to compare both the files.
+
+pgma2b
+- This module will convert an ASCII pgm to a binary pgm. It will do this by using the readASCII module to read in an 
+ASCII file and store it in a 2D array. Then writeBinary will be used to write the data in the 2D array into 
+a binary file.
+
+pgmb2a
+- This module will convert a binary pgm to a ASCII pgm. It will do this does this by using the readBinary 
+module to read in a binary file and store it in a 2D array. Then writeASCII will be used to write the 2D array into an ASCII 
+into an ASCII file.
+
+pgmReduce
+- This module takes the input file and reduces it by the facoter n in each diemsion. It will do this by reading 
+in the file using either readASCII or readBinary. Then it will use the reduceSize to reduce the size of the 
+2D array. Finaly it will be written to a file using either writeASCII or writeBinary.
+
+pgmTile
+This program takes 3 arguments, an input file (either ASCII or binary), a tiling factor n, and an 
+output file name template. It will then divide the input file into n*n smaller images corresponding to 
+parts of the image.
+
+pgmAssemble
+This programme will be used to assemble a large image from smaller ones.
+
+
+
+
+
+                                                Helper modules
+------------------------------------------------------------------------------------------------------------
+
+initialise.c
+- This module is used to intial pgmFile structs. It will be used in the pgmEcho, pgmComp, pgmReduce, pgmTile 
+and pgmAssemble programs.
+
+echoFile
+- This module is used to make copies of a file. It will be used in the pgmEcho program.
+
+readASCII.c
+- This module will read in an ASCII file and store it as pgmFile struct. It will be used in the pgmEcho, pgmComp, 
+pgma2b, pgmReduce, pgmTile and pgmAssemble programs.
+
+readBinary.c
+- This module will read in an binary file and store it as pgmFile struct. It will be used in the pgmEcho, pgmComp, 
+pgmb2a, pgmReduce, pgmTile and pgmAssemble programs.
+
+writeASCII.c
+- Produce an ASCII output file when it is given a pgmFile struct. It will be used in the pgmEcho, pgmb2a, 
+pgmReduce, pgmTile and pgmAssemble programs.
+
+writeBinary.c
+- Produce a binary output file when it is given a pgmFile struct. It will be used in the pgmEcho, pgma2b, 
+pgmReduce, pgmTile and pgmAssemble programs.
+ 
+logicallyEquivalent
+- This module will check to see if two pgm files are logically equivalent. This means it will compare the 
+values in the files whilst ignoring whitespace. 
+
+reduceSize.c
+- This module will take the height and width of a pgm file and reduce it by the specified scale factor. 
+It will be used in the pgmReduce program. It will be used in the pgmReduce program.
+
+tileImage.c
+- This module will be used to split a file into smaller files. It will be used in the pgmTile program.
+
+fileType.c
+- This module will be used to determine whether a given pgm is ASCII or Binary. It will be used in the pgmEcho,
+ pgmComp, pgmReduce, pgmTile and pgmAssemble programs.
+
+error.c
+- This module will take in an error code and print out the appropriate erro message. It will be used in the 
+pgmEcho, pgmComp, pgmReduce, pgmTile and pgmAssemble programs.
+
+cleanUp.c
+This module will free up any allocated memory. The purpose of this function is to cleanup if an error occurs 
+in the code. It will be used in the pgmEcho, pgmComp, pgmReduce, pgmTile and pgmAssemble programs.

@@ -1,0 +1,4 @@
+Firstly I will execute each function(module) in the program on pen and paper. Next I will form some 
+test cases to test the programs, ensuring that the test cases include normal values, edges cases and 
+invalid values. Boundaries such as zero, maximum and minimum values will also be tested for. I will 
+ensure that I am regression testing by running all the tests after every modification.
